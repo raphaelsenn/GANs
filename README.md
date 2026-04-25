@@ -69,10 +69,10 @@ The original CelebA dataset consists of human faces with diverse backgrounds.
 However, working with human faces and diverse backgrounds makes it difficult for the DCGAN generator.
 To make his life more easy, I used a pretrained YOLOv8 medium (v0.2) face detector to extract tight face crops from the original CelebA images (see in [prepro.py](./utils/prepro.py)).
 
-Ensure you download the pretrained weights of [YOLOv8 medium](https://github.com/ultralytics/ultralytics), and specify the path to the data directory in `./utils/prepro.py`. After that, you are ready to run:
+Ensure you download the pretrained weights of [YOLOv8 medium](https://github.com/ultralytics/ultralytics), and specify the path to the data directory in `./src/utils/prepro.py`. After that, you are ready to run:
 
 ```bash
-python3 ./utils/prepro.py
+python3 ./src/utils/prepro.py
 ```
 
 **NOTE: The preprocessing step using the YOLOv2 model is optional.**
@@ -80,17 +80,11 @@ python3 ./utils/prepro.py
 #### 3. Training
 
 Modify the trainig script `train_dcgan.py` to point to your data directory.
+This script will train both the generator and discriminator on the CelebA dataset.
 
 ```bash
 python3 train_dcgan.py
 ```
-
-This script will train both the generator and discriminator on the CelebA dataset.
-It will automatically create: 
-
-* a file `dcgan_report_celeba.csv` where the losses of both, the generator and discriminator are stored,
-* a directory `checkpoints_dcgan` where the weights will be saved,
-* a directory `celeba_preview` where example images are saved during training.
 
 #### 4. Inference: Generated bedrooms using the DCGAN generator
 
