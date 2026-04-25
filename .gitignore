@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+*.csv
+*.pt
+*.pth
+*.DS_Store
+
+cgan*/
+dcgan*/
+vanilla-gan*/
+mnist*/
+celeba*/
+.vscode
