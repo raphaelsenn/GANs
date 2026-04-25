@@ -9,7 +9,7 @@ ROOT_DIR = Path("../../datasets/celeba/data/")
 PATH_LANDMARKS_FILE = Path("../../datasets/celeba/landmarks.csv")
 
 
-class TestCub:
+class TestCelebA:
     def test_all_images_exist(self) -> None:
         dataset = CelebA(root_dir=str(ROOT_DIR), img_file=str(PATH_LANDMARKS_FILE))
 
